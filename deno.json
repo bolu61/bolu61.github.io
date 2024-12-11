@@ -1,0 +1,24 @@
+{
+  "tasks": {
+    "build:main": "deno run -A src/main.tsx > dist/index.html",
+    "build:styles": "cp src/styles.css dist/styles.css",
+    "build": "mkdir -p dist && deno task build:main && deno task build:styles"
+  },
+  "imports": {
+    "@oak/oak": "jsr:@oak/oak@^17.1.3",
+    "@types/react": "npm:@types/react@^19.0.1",
+    "@types/react-dom": "npm:@types/react-dom@^19.0.2",
+    "react": "npm:react@^19.0.0",
+    "react-dom": "npm:react-dom@^19.0.0"
+  },
+  "compilerOptions": {
+    "types": [
+      "react",
+      "react-dom",
+      "@types/react"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "jsxImportSourceTypes": "@types/react"
+  }
+}
